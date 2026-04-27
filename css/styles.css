@@ -1,0 +1,324 @@
+:root {
+  --nus-blue: #003D7C;
+  --surface: #f7f9fc;
+  --text: #1f2328;
+  --muted: #5c6570;
+  --border: #d9dde3;
+  --max-width: 1120px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: #fff;
+  line-height: 1.6;
+}
+img { max-width: 100%; display: block; }
+
+a { color: var(--nus-blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container {
+  width: min(var(--max-width), calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.site-header {
+  background: #ffffff;
+  color: #fff;
+  padding: 1rem 0 0.5rem;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.logo-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 0.6rem 0.6rem;
+}
+.logo-link { display: inline-flex; align-items: center; }
+.logo-row img {
+  display: block;
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+.logo-row .sublogo img { height: 48px; }
+
+.navbar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: #003D7C;  /* NUS Blue */
+  padding: 0.5rem 0.6rem;
+}
+
+.nav-toggle {
+  display: none;
+  border: 1px solid rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border-radius: 10px;
+  padding: 0.55rem 0.75rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0.25rem;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.site-nav a {
+  display: inline-block;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.95rem;
+}
+.site-nav a:hover {
+  background: rgba(255,255,255,0.12);
+  text-decoration: none;
+}
+.site-nav a.active {
+  background: #fff;
+  color: var(--nus-blue);
+}
+
+main { padding: 2rem 0 3rem; }
+
+.page-title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  line-height: 1.15;
+}
+.lead {
+  color: var(--muted);
+  max-width: 72ch;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: start;
+}
+.hero > .page-title {
+  grid-column: 1 / -1;   /* 关键：跨两列 */
+  margin-bottom: 0.5rem;
+}
+.hero-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+}
+.photo-wrap {
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  justify-content: flex-end;
+}
+.photo-wrap img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+.pub-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.small-card {
+  text-align: center;
+  padding: 1rem;
+}
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.book-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  background: #fff;
+}
+.book-title {
+  margin: 0 0 0.4rem 0;
+  font-size: 0.98rem;
+  font-style: italic;
+}
+.book-meta {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+.caption {
+  margin-top: 0.75rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.section { margin-top: 2rem; }
+.section h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.35rem;
+}
+.section h3 {
+  margin: 1.2rem 0 0.55rem;
+  font-size: 1.08rem;
+}
+.section p { margin: 0.5rem 0; }
+.list-clean {
+  margin: 0.5rem 0 0;
+  padding-left: 1.2rem;
+}
+.list-clean li { margin: 0.35rem 0; }
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #fff;
+  padding: 1rem 1.1rem;
+}
+.card h3 { margin-top: 0; }
+
+.person-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.person-photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+.person-name {
+  margin: 0;
+  font-size: 1.05rem;
+}
+.person-role {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.person-meta {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.kicker {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2fb4ff;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+.section-gap {
+  padding-top: 2rem;
+}
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  padding: 1.5rem 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: start;
+}
+
+.small-note {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.team-staff-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+.team-student-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+}
+.clean-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+.clean-table th {
+  text-align: left;
+  font-weight: 600;
+  padding: 0.5rem 0.3rem;
+  border-bottom: 2px solid #ddd;
+}
+.clean-table td {
+  padding: 0.45rem 0.3rem;
+  vertical-align: top;
+}
+.clean-table tbody tr {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+@media (max-width: 900px) {
+  .hero, .grid-2, .footer-grid { grid-template-columns: 1fr; }
+  .nav-toggle { display: inline-flex; align-items: center; gap: 0.4rem; }
+  .site-nav { display: none; width: 100%; }
+  .site-nav.open { display: block; }
+  .navbar-row { flex-wrap: wrap; }
+  .site-nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0.25rem;
+    width: 100%;
+    padding-bottom: 0.75rem;
+  }
+  .site-nav a { border-radius: 12px; width: 100%; }
+}
