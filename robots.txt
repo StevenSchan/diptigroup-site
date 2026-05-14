@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://stevenschan.github.io/diptigroup-site/sitemap.xml
+Sitemap: https://www.diptilaboratory.com/sitemap.xml
