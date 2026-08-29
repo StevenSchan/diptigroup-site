@@ -393,6 +393,66 @@ main { padding: 2rem 0 3rem; }
   line-height: 1.6;
 }
 
+/* ===== News Grid 容器 ===== */
+.home-news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 桌面端三列等宽 */
+  gap: 2rem;                              /* 卡片间距 */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ===== 响应式适配 ===== */
+
+/* 平板：两列 */
+@media (max-width: 992px) {
+  .home-news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 手机：单列 */
+@media (max-width: 600px) {
+  .home-news-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+}
+
+/* ===== 卡片本身微调 ===== */
+.news-card {
+  display: flex;
+  flex-direction: column;      /* 让内容上下排列 */
+  height: 100%;               /* 让所有卡片等高 */
+  transition: box-shadow 0.25s ease;
+}
+
+.news-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+}
+
+.news-card img {
+  width: 100%;
+  height: 200px;              /* 稍调高一点更协调，可按需调整 */
+  object-fit: cover;
+  display: block;
+  background-color: #f0f0f0;  /* 加载占位色 */
+}
+
+.news-card-content {
+  flex: 1;                    /* 让内容区域撑满剩余高度 */
+  display: flex;
+  flex-direction: column;
+  padding: 1.2rem;
+}
+
+/* 让 "Read More" 始终贴在底部 */
+.news-card-content .read-more {
+  margin-top: auto;
+  display: inline-block;
+}
+
 .read-more {
   font-weight: 600;
   text-decoration: none;
